@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Order</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg?cs=srgb&dl=chairs-coffee-shop-drinking-glasses-67468.jpg&fm=jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            /* background-color: #fff; */
+            background: rgba(250, 244, 175, 0.56);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(121, 56, 3, 0.1);
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        label {
+            font-size: 18px;
+        }
+        input[type="text"],
+        input[type="number"] {
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            padding: 15px 20px;
+            font-size: 18px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        li img {
+            width: 60px;
+            height: 30px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        .item-label {
+            display: inline-block;
+            width: 200px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Enter Customer Information:</h1>
+        <form action="/submit" method="post">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br>
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="text" id="phoneNumber" name="phoneNumber" required pattern="[0-9]*" minlength="10" maxlength="10"><br>
+            <h1>Select Items:</h1>
+            <ul>
+                <li><img src="https://foodiewish.com/wp-content/uploads/2020/05/Masala-Dosa-Recipe.jpg" alt="Dosa"><span class="item-label">Dosa</span><input type="number" id="Dosa" name="Dosa" min="0"></li>
+                <li><img src="https://www.pakistanihealthyrecipes.com/wp-content/uploads/2021/06/how-to-make-halwa-puri-recipe-at-home.jpg" alt="Puri"><span class="item-label">Puri</span><input type="number" id="Puri" name="Puri" min="0"></li>
+                <li><img src="https://foodiewish.com/wp-content/uploads/2020/05/Medu-Vada-Recipe-1.jpg" alt="Vada"><span class="item-label">Vada</span><input type="number" id="Vada" name="Vada" min="0"></li>
+                <li><img src="https://www.awesomecuisine.com/wp-content/uploads/2014/05/curd-bonda-585x390.jpg" alt="Bonda"><span class="item-label">Bonda</span><input type="number" id="Bonda" name="Bonda" min="0"></li>
+            </ul>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

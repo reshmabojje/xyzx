@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: resturant-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: your-app
+  template:
+    metadata:
+      labels:
+        app: your-app
+    spec:
+      containers:
+      - name: your-app-container
+        image: reshma7/example-nodejs:latest
+        ports:
+          - containerPort: 3000
+        env:
+         - name: MONGODB_URI
+           value: "mongodb://example:27017/sapient"
+      - name: mongo
+        image: mongo:latest
+        ports:
+           - containerPort: 27017
